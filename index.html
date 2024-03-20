@@ -4,244 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download PDF</title>
-
-    <style>
-      .container {
-        display: block;
-
-        align-items: center;
-        background-color: orange;
-        border-radius: 25px;
-        padding-top: 12px;
-        height: 400px;
-        width: 530px;
-      }
-      .modalPixBox {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-color: orange;
-        border-radius: 25px;
-        height: 280px;
-        width: 530px;
-      }
-
-      .modalPixBox a {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 40px;
-        padding-bottom: 25px;
-        cursor: zoom-in;
-        text-shadow: 2px 2px 5px rgb(94, 94, 94);
-      }
-      .modalPixBox p {
-        text-align: center;
-        color: #ffffff;
-        font-size: 20px;
-        cursor: zoom-in;
-        text-shadow: 2px 2px 5px rgb(94, 94, 94);
-      }
-
-      .modalPixInput {
-        width: 222px;
-        color: blue;
-        background-color: #f7f7f7;
-        border-style: none;
-        border-radius: 5px;
-        height: 38px;
-        padding-left: 15px;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 5px rgb(169, 192, 255);
-      }
-      .modalPixInput ::placeholder {
-        color: blue;
-      }
-      .modalPixInput2 {
-        color: blue;
-        background-color: #f7f7f7;
-        border-style: none;
-        border-radius: 50px;
-        width: 90px;
-        height: 38px;
-        margin-top: 20px;
-        padding-left: 10px;
-        text-align: center;
-        text-shadow: 2px 2px 5px rgb(169, 192, 255);
-      }
-      .modalPixInput2::placeholder {
-        color: #5a97d6;
-      }
-
-      .modalPixSelect {
-        background-color: #fafafa;
-        display: 120px;
-        color: blue;
-        background-color: #f7f7f7;
-        border-style: none;
-        border-radius: 5px;
-        height: 38px;
-        text-shadow: 2px 2px 5px rgb(169, 192, 255);
-        color: blue;
-      }
-      .modalClose {
-        color: #ffffff;
-        font-size: 25px;
-        font-weight: bold;
-        cursor: pointer;
-
-        margin-left: 480px;
-      }
-
-      .modalClose:hover {
-        color: #ff0000;
-      }
-
-      .modalButtons {
-        padding-top: 25px;
-        display: inline-flex;
-      }
-      .modalButtons1 {
-        background-color: #fafafa;
-        color: blue;
-        border-radius: 40px;
-        cursor: cell;
-        height: 35px;
-        border-color: rgba(0, 0, 51, 0);
-        width: 70px;
-        margin: 0 60px 0 60px;
-        margin-top: 10px;
-      }
-
-      .modalButtons1:hover {
-        background-color: #72d7ff;
-        color: #ffffff;
-      }
-
-      .modalButtons2 {
-        background-color: #fafafa;
-        color: orange;
-        border-radius: 50px;
-        cursor: cell;
-        height: 35px;
-        width: 112px;
-        margin-top: 10px;
-        border-color: rgba(0, 0, 51, 0);
-      }
-
-      .modalButtons2:hover {
-        background-color: #72d7ff;
-        color: #ffffff;
-      }
-      .bg-img img {
-        width: 200px;
-        height: 200px;
-      }
-
-      .modalPixBoxC a {
-        color: white;
-        font-size: 30px;
-        cursor: zoom-in;
-        text-shadow: 2px 2px 5px rgb(94, 94, 94);
-        text-decoration: none;
-      }
-      .a a {
-        color: white;
-        font-size: 15px;
-        cursor: zoom-in;
-        text-shadow: 2px 2px 5px rgb(94, 94, 94);
-        text-decoration: none;
-      }
-      .inner-box a {
-        display: flex;
-        /* // text-align: center; */
-        justify-content: center;
-        color: blue;
-        text-decoration: none;
-        font-size: 15px;
-        /* padding-bottom: 25px; */
-        cursor: zoom-in;
-        text-shadow: 2px 2px 5px rgb(255, 201, 140);
-      }
-      .box {
-        display: flex;
-        justify-content: center;
-
-        margin-top: 10px;
-        align-items: center;
-        background-color: orange;
-        border-radius: 25px;
-        height: 240px;
-        width: 250px;
-      }
-      .inner-box {
-        justify-content: center;
-        flex-direction: column;
-        align-items: baseline;
-
-        display: inline-flex;
-        flex-wrap: wrap;
-
-        background-color: white;
-        border-radius: 20px;
-        padding-left: 10px;
-        height: 220px;
-        width: 230px;
-      }
-      #modalPixBoxC {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        flex-direction: column;
-
-        background-color: orange;
-        border-radius: 25px;
-        height: 280px;
-        width: 530px;
-      }
-      .box-logo {
-        background-color: white;
-        border-radius: 15px;
-        height: 100px;
-        width: 100px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-      }
-    </style>
-
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   </head>
-
   <body>
     <button id="downloadButton">Baixar PDF</button>
 
-      <div id="modalPixBoxC">
+    <div id="content">
+      <div class="modalPixBoxC">
         <a>Comprovante</a>
 
         <div class="box">
           <div class="inner-box">
-            <a>De:David Eduardo Lino</a>
-            <a>Agencia: 1234 </a>
-            <a>CPF: 59076672814 </a>
+            <a>De: David Lino </a>
+            <a>Agencia: 1441 </a>
+            <a>CPF: 59076672814</a>
             <br />
-            <a>Para: Luis Henrique </a>
-            <a>Chave: 1434546745 </a>
-            <a>Agencia: 4234 </a>
-            <a>CPF: 54221341371 </a>
+            <a>Para:Luis Henrique </a>
+            <a>Chave: 14997701277</a>
+            <a>Agencia: 1441 </a>
+            <a>CPF: </a>
 
             <br />
-            <a>Valor 740.00 reais</a>
+            <a>Valor 500.00 reais</a>
           </div>
         </div>
 
         <div class="img">
           <div class="box-logo">
-            <img src="./bb-logo.png" alt="logo" />
+            <img src="data:image/png;base64, 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" alt="logo" />
           </div>
         </div>
 
@@ -257,8 +48,12 @@
           <a>CNPJ 342152311</a>
         </div>
       </div>
+    </div>
 
     <script>
+
+
+
       document
         .getElementById("downloadButton")
         .addEventListener("click", function () {
@@ -266,7 +61,7 @@
         });
 
       function downloadPDF() {
-        var element = document.getElementById("modalPixBoxC");
+        var element = document.getElementById("content");
         html2pdf().from(element).save("arquivo.pdf");
       }
     </script>

@@ -1,0 +1,88 @@
+
+    
+#content  {
+    color: white;
+    font-size: 15px;
+    cursor: zoom-in;
+    text-shadow: 2px 2px 5px rgb(94, 94, 94);
+    text-decoration: none;
+  }
+  .a a{
+    color: white;
+    font-size: 15px;
+    cursor: zoom-in;
+    text-shadow: 2px 2px 5px rgb(94, 94, 94);
+    text-decoration: none;
+  }
+  .inner-box a {
+    display: flex;
+    /* // text-align: center; */
+    justify-content: center;
+    color: blue;
+    text-decoration: none;
+    font-size: 15px;
+    /* // padding-bottom: 25px; */
+    cursor: zoom-in;
+    text-shadow: 2px 2px 5px rgb(255, 201, 140);
+  }
+  .box {
+    display: flex;
+    justify-content: center;
+  
+    margin-top: 10px;
+    align-items: center;
+    background-color: orange;
+    border-radius: 25px;
+    height: 240px;
+    width: 250px;
+  }
+  .inner-box {
+    justify-content: center;
+    flex-direction: column;
+    align-items: baseline;
+  
+  
+    display: inline-flex;
+    flex-wrap: wrap;
+  
+  
+    background-color: white;
+    border-radius: 20px;
+    padding-left: 10px;
+    height: 220px;
+    width: 230px;
+  }
+  .modalPixBoxC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  
+    background-color: orange;
+    border-radius: 25px;
+    height: 280px;
+    width: 530px;
+  }
+  #content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  
+    background-color: orange;
+    border-radius: 25px;
+    height: 280px;
+    width: 530px;
+  }
+  .box-logo{
+    background-color: white;
+    border-radius: 15px;
+    height: 100px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
