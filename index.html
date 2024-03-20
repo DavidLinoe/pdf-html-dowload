@@ -1,37 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download PDF</title>
+
+    <style type="text/scss">
+      .container {
+        display: block;
+
+        align-items: center;
+        background-color: orange;
+        border-radius: 25px;
+        padding-top: 12px;
+        height: 400px;
+        width: 530px;
+      }
+      .modalPixBox {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: orange;
+        border-radius: 25px;
+        height: 280px;
+        width: 530px;
+      }
+
+      .modalPixBox a {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 40px;
+        padding-bottom: 25px;
+        cursor: zoom-in;
+        text-shadow: 2px 2px 5px rgb(94, 94, 94);
+      }
+      .modalPixBox p {
+        text-align: center;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: zoom-in;
+        text-shadow: 2px 2px 5px rgb(94, 94, 94);
+      }
+
+      .modalPixInput {
+        width: 222px;
+        color: blue;
+        background-color: #f7f7f7;
+        border-style: none;
+        border-radius: 5px;
+        height: 38px;
+        padding-left: 15px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 5px rgb(169, 192, 255);
+      }
+      .modalPixInput ::placeholder {
+        color: blue;
+      }
+      .modalPixInput2 {
+        color: blue;
+        background-color: #f7f7f7;
+        border-style: none;
+        border-radius: 50px;
+        width: 90px;
+        height: 38px;
+        margin-top: 20px;
+        padding-left: 10px;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgb(169, 192, 255);
+      }
+      .modalPixInput2::placeholder {
+        color: #5a97d6;
+      }
+
+      .modalPixSelect {
+        background-color: #fafafa;
+        display: 120px;
+        color: blue;
+        background-color: #f7f7f7;
+        border-style: none;
+        border-radius: 5px;
+        height: 38px;
+        text-shadow: 2px 2px 5px rgb(169, 192, 255);
+        color: blue;
+      }
+      .modalClose {
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+
+        margin-left: 480px;
+      }
+
+      .modalClose:hover {
+        color: #ff0000;
+      }
+
+      .modalButtons {
+        padding-top: 25px;
+        display: inline-flex;
+      }
+      .modalButtons1 {
+        background-color: #fafafa;
+        color: blue;
+        border-radius: 40px;
+        cursor: cell;
+        height: 35px;
+        border-color: rgba(0, 0, 51, 0);
+        width: 70px;
+        margin: 0 60px 0 60px;
+        margin-top: 10px;
+      }
+
+      .modalButtons1:hover {
+        background-color: #72d7ff;
+        color: #ffffff;
+      }
+
+      .modalButtons2 {
+        background-color: #fafafa;
+        color: orange;
+        border-radius: 50px;
+        cursor: cell;
+        height: 35px;
+        width: 112px;
+        margin-top: 10px;
+        border-color: rgba(0, 0, 51, 0);
+      }
+
+      .modalButtons2:hover {
+        background-color: #72d7ff;
+        color: #ffffff;
+      }
+      .bg-img img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .modalPixBoxC a {
+        color: white;
+        font-size: 30px;
+        cursor: zoom-in;
+        text-shadow: 2px 2px 5px rgb(94, 94, 94);
+        text-decoration: none;
+      }
+      .a a {
+        color: white;
+        font-size: 15px;
+        cursor: zoom-in;
+        text-shadow: 2px 2px 5px rgb(94, 94, 94);
+        text-decoration: none;
+      }
+      .inner-box a {
+        display: flex;
+        /* // text-align: center; */
+        justify-content: center;
+        color: blue;
+        text-decoration: none;
+        font-size: 15px;
+        /* padding-bottom: 25px; */
+        cursor: zoom-in;
+        text-shadow: 2px 2px 5px rgb(255, 201, 140);
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 10px;
+        align-items: center;
+        background-color: orange;
+        border-radius: 25px;
+        height: 240px;
+        width: 250px;
+      }
+      .inner-box {
+        justify-content: center;
+        flex-direction: column;
+        align-items: baseline;
+
+        display: inline-flex;
+        flex-wrap: wrap;
+
+        background-color: white;
+        border-radius: 20px;
+        padding-left: 10px;
+        height: 220px;
+        width: 230px;
+      }
+      .modalPixBoxC {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        background-color: orange;
+        border-radius: 25px;
+        height: 280px;
+        width: 530px;
+      }
+      .box-logo {
+        background-color: white;
+        border-radius: 15px;
+        height: 100px;
+        width: 100px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+    </style>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-</head>
-<body>
+  </head>
 
-<button id="downloadButton">Baixar PDF</button>
+  <body>
+    <button id="downloadButton">Baixar PDF</button>
 
-<div id="content">
-    <h1>Exemplo de Conteúdo HTML</h1>
-    <p>Este é um parágrafo de exemplo.</p>
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
-</div>
+    <div id="content">
+      <div class="modalPixBoxC">
+        <a>Comprovante</a>
 
-<script>
-    document.getElementById('downloadButton').addEventListener('click', function() {
-        downloadPDF();
-    });
+        <div class="box">
+          <div class="inner-box">
+            <a>De: userService.usuario.getValue().nome_cliente </a>
+            <a>Agencia: agencia </a>
+            <a>CPF: cpf </a>
+            <br />
+            <a>Para: nome </a>
+            <a>Chave: chave </a>
+            <a>Agencia: agencia </a>
+            <a>CPF: cpf </a>
 
-    function downloadPDF() {
-        var element = document.getElementById('content');
-        html2pdf()
-            .from(element)
-            .save('arquivo.pdf');
-    }
-</script>
+            <br />
+            <a>Valor valor reais</a>
+          </div>
+        </div>
 
-</body>
+        <div class="img">
+          <div class="box-logo">
+            <img src="./../../../../../assets/images/bb-logo.png" alt="logo" />
+          </div>
+        </div>
+
+        <div class="a">
+          <a>ID DA TRANSAÇÂO : </a>
+          <br />
+
+          <a>I1534553$#152561411D</a>
+          <br />
+          <a>Banco Bench Pagamentos LTDA</a>
+          <br />
+
+          <a>CNPJ 342152311</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("downloadButton")
+        .addEventListener("click", function () {
+          downloadPDF();
+        });
+
+      function downloadPDF() {
+        var element = document.getElementById("content");
+        html2pdf().from(element).save("arquivo.pdf");
+      }
+    </script>
+  </body>
 </html>
