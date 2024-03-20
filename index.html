@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<button id="downloadButton">Baixar PDF</button>
+
+<div id="content">
+    <h1>Exemplo de Conteúdo HTML</h1>
+    <p>Este é um parágrafo de exemplo.</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</div>
+
+<script>
+    document.getElementById('downloadButton').addEventListener('click', function() {
+        downloadPDF();
+    });
+
+    function downloadPDF() {
+        var element = document.getElementById('content');
+        html2pdf()
+            .from(element)
+            .save('arquivo.pdf');
+    }
+</script>
+
+</body>
+</html>
